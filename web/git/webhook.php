@@ -8,7 +8,7 @@
 
 $git = "git"; //默认是用git全局变量，有的环境可能要指明具体安装路径
 $branch = "master"; // 
-$logName = "git_data"; //本地日志名称，与当前php文件在同一目录
+$logName = "/www/wwwroot/www.4gnote.com/git_data"; //本地日志名称，与当前php文件在同一目录
 $savePath = "/www/wwwroot/www.4gnote.com/masterfuture/"; //网站根目录，初次克隆确保目录为空
 $gitSSHPath  = "git@github.com:hexiao17/masterfuture.git";//代码仓库SSH地址
 $secret = "abcd1234"; //在GITEE设置的密码
