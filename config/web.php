@@ -16,7 +16,7 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\member\MemberExtra',
             'enableAutoLogin' => true,
         ],
         //错误处理器
