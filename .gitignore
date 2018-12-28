@@ -1,6 +1,6 @@
 /.project
-/runtime/
-/web/assets/
+/runtime/*
+/web/assets/*
 /vendor/
 
 
