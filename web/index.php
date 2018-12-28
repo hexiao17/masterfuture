@@ -9,6 +9,7 @@ if($isdebug){
     defined('YII_ENV') or define('YII_ENV', 'dev');  //上线要改
     require(__DIR__ . '/../vendor/autoload.php');
     require(__DIR__ . '/../vendor/yiisoft/yii2/Yii.php');
+   
 }else{
     define("ISALIYUN", true);
     require(__DIR__ . '/../../yii2/vendor/autoload.php');
@@ -22,5 +23,6 @@ if(file_exists(__DIR__."/../../release_version/sxyz_version")){
 }else{
     define('RELEASE_VERSION',time());
 }
-
+ 
 (new yii\web\Application($config))->run();
+ 
