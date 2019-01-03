@@ -63,7 +63,7 @@ class TaskController extends BaseFrontController
 		//状态
 		$statu = intval($this->get('statu',0));
 		//分组
-		$group = intval($this->get("group",0));
+		$group = intval($this->get("group",1));
 		//分页
 		$p = intval( $this->get("p",1) );
 		$p = ( $p > 0 )?$p:1;
