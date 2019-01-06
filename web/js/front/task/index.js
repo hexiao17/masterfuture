@@ -33,7 +33,7 @@ var task_index_ops = {
 						  }
 						  layer.close(index);
 						    var data = {
-						    	title:title,task_desc:content,group:type,addr_method:'index'
+						    	title:title,task_desc:content,task_group:type,addr_method:'index'
 						    };
 						    //后台提交
 						    $.ajax({
