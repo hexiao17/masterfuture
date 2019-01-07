@@ -80,7 +80,7 @@ var task_index_ops = {
 			layer.prompt({
 						title: '请按格式输入内容',
 						formType: 2,
-						 value: '名称|单位|符号(如：&#xe631;)',
+						 value: '名称|单位|符号(最好用首字母如WX)',
 						}, function(content, index){
 					   var arr = content.split("|");
 					   if(arr.length!=3){
