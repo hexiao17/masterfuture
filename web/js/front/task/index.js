@@ -99,7 +99,7 @@ var task_index_ops = {
 						  layer.msg("符号不能大于20个字符");
 						  return;
 					  }
-					  layer.close(index);					  
+					  layer.close(index);			  
 					   
 						    var data = {
 						    	name:arr[0],unit:arr[1],node_icon:arr[2],add_method:'ajax'
