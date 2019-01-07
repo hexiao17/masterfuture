@@ -21,14 +21,13 @@ $this->title =  Yii::$app->params['title'];
 <div class="layui-col-md8">
       <div class="fly-panel">
         <div class="fly-panel-title fly-filter">
-          <a>置顶</a>
-           
+          <a>置顶</a> 
            <div class="layui-btn-group fly-right" id="add_task_index">
 			  <button  value='1' class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe654;</i>今</button>
 			  <button  value='2' class="layui-btn layui-btn-sm">周</button>
 			  <button  value='3' class="layui-btn layui-btn-sm">月</button>
 			</div>
-        </div>
+        </div> 
         <ul class="fly-list">
           <?php 
           	  foreach ($list_top5 as $_item):
@@ -74,8 +73,23 @@ $this->title =  Yii::$app->params['title'];
           <?php endforeach;?>
             
         </ul>
+       
       </div>
-
+	<div class="fly-panel" style="margin-bottom: 5px;margin-top:-10px;">
+        <div class="fly-panel-title fly-filter counter_parent">
+          <a>计数器：</a>
+          
+          <?php 
+            foreach ($counters as $_e) {
+                echo '<span><a class="btn_user_counter" title="'.$_e['name'].'" data_id="'.$_e['id'].'" >'.$_e['num'].'<i class="layui-icon" style="font-size: 30px; color: #1E9FFF;">'.$_e['node_icon'].'</i></a></span>';
+            }
+          ?>  
+          
+           <div class="layui-btn-group fly-right" id="add_counter_index">
+			  <button  value='1' class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe654;</i>增加</button>			 
+			</div>        
+        </div> 
+     </div> 
       <div class="fly-panel" style="margin-bottom: 0;">
         <?php 
             $group = 1;

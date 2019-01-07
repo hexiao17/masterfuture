@@ -16,6 +16,7 @@ use app\models\member\MemberExtra;
 use app\models\masterfuture\MasterfutureTaskExtra;
 use app\modules\front\controllers\common\BaseFrontController;
 use app\models\masterfuture\MasterfutureCategoryExtra;
+use app\models\masterfuture\MasterfutureUserCounterExtra;
  
  
 class TaskController extends BaseFrontController
@@ -50,7 +51,9 @@ class TaskController extends BaseFrontController
 				];
 			}
 		}
-		 
+		//---查询计数器
+		$counters = MasterfutureUserCounterExtra::find()->where(['user_id'=>$user_id,'statu'=>0])->all();	
+		
 		//-----------默认当天任务---------------------------------------	
 		//关键词	 
 		$kw = trim( $this->get("kw","") );
@@ -125,6 +128,7 @@ class TaskController extends BaseFrontController
 				'list_top5'=>$data5,
 				'list' => $data,
 				'search_conditions' => $search_conditions,
+		        'counters'=>$counters,
 				'pages' => [
 						'total_count' => $total_res_count,
 						'page_size' => $pageSize,
