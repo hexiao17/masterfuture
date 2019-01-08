@@ -84,8 +84,8 @@ var task_user_set = {
 			var repass = repass_target.val(); 
 		 
 			//js校验
-			if(!validate.checkPwdStrong(nowpass)){
-	               common_ops.tip( "密码必须为字符和数字的组合~" ,nowpass_target);
+			if(!validate.checkPwdStrong(pass)){
+	               common_ops.tip( "密码必须为字符和数字的组合~" ,pass_target);
 	               return;
 	         } 
            
