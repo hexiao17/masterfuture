@@ -6,6 +6,8 @@ use app\models\masterfuture\MasterfutureTaskExtra;
 use app\models\masterfuture\MasterfutureSummaryExtra;
 use app\common\services\ValidateService;
 use app\common\services\UtilService;
+use app\models\masterfuture\MasterfutureUserCounterExtra;
+use app\models\masterfuture\MasterfutureCounterLogExtra;
 
 class SummaryController extends BaseFrontController
 {
@@ -29,12 +31,20 @@ class SummaryController extends BaseFrontController
             return $this->renderJSON([],"请选择正确的时间~~",-1);
         }
         
-        
+        //任务
         $tasks = MasterfutureTaskExtra::find()->where(['user_id'=>$user_id])
                 ->andWhere(['>','created_time',$arr[0]])
                 ->andWhere(['<=','finish_time',$arr[1]])
                 ->all();
-        
+//         //计数器,搞不定，先不加
+//         $counters = MasterfutureUserCounterExtra::find()->where(['user_id'=>$user_id])
+//                 ->joinWith('logs')                
+//                 ->andWhere(['>','logs.created_time',$arr[0]])
+//                 ->andWhere(['<=','logs.created_time',$arr[1]])
+//                 ->groupBy('id')
+//                 ->all();
+//         var_dump($counters);
+//         exit();
         $longText = "";
         $i = 1;
         //循环处理字符串
@@ -44,6 +54,7 @@ class SummaryController extends BaseFrontController
             $i++;
         }
         
+      
         //保存
         $summary_model = new MasterfutureSummaryExtra();
         $summary_model->user_id = $user_id;

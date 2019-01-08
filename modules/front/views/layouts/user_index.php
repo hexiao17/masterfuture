@@ -63,8 +63,8 @@ use app\common\services\UtilService;
 							class="layui-icon">&#xe611;</i> 我的总结
 					</a></li>
 					<li class="layui-nav-item  nav_message"><a
-						href="<?=UrlService::buildFrontUrl('/user/message');?>"> <i
-							class="layui-icon">&#xe611;</i> 我的消息
+						href="<?=UrlService::buildFrontUrl('/user/counter');?>"> <i
+							class="layui-icon">&#xe611;</i> 计数器
 					</a></li>
 				</ul>
 				<div class="fly-panel">

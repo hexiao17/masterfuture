@@ -166,5 +166,13 @@ class ConstantMapService
         1 => '待审核',
         2=>'已审核',
     ];
+    
+    //
+    public static $usercounter_statu_mapping=[
+        -1 => '删除',
+        0 => '正在进行',
+        1=>'已完成',
+    ];
+    
 }
 

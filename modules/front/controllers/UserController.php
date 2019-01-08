@@ -39,6 +39,7 @@ use app\models\masterfuture\MasterfutureFavExtra;
 use app\models\member\Member;
 use app\common\services\ValidateService;
 use app\models\masterfuture\MasterfutureCategoryExtra;
+use app\models\masterfuture\MasterfutureUserCounterExtra;
  
 class UserController extends BaseFrontController {
 
@@ -128,9 +129,14 @@ class UserController extends BaseFrontController {
        
     }
     
-    public function actionMessage() {
-       
-        return $this->render('message');
+    public function actionCounter() {
+        $user = $this->current_user;
+        $counters = MasterfutureUserCounterExtra::find()->where(['user_id'=>$user['id']])->all();
+        
+        
+        return $this->render('message',[
+                'counters'=>$counters   
+            ]);
     }
     
     public function actionActivate(){
